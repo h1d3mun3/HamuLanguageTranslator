@@ -1,13 +1,13 @@
 import XCTest
-@testable import HamuLanguageTranslateor
+@testable import HamuLanguageTranslator
 
-final class HamuLanguageTranslateorTests: XCTestCase {
+final class HamuLanguageTranslatorTests: XCTestCase {
     func testExample() throws {
         let sources = "あいさつ"
         let expected = "はむはー"
 
 
-        let result = HamuLanguageTranslateor.translate(from: sources)
+        let result = HamuLanguageTranslator.translate(from: sources)
 
 
         XCTAssertEqual(result, expected)

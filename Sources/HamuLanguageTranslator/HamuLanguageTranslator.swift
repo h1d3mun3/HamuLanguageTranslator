@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-public struct HamuLanguageTranslateor {
+public struct HamuLanguageTranslator {
     public static func translate(from source: String) -> String {
         var result = source
         var containedWords = [HamuWord]()

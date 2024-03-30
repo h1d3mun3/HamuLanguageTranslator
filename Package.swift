@@ -4,21 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "HamuLanguageTranslateor",
+    name: "HamuLanguageTranslator",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "HamuLanguageTranslateor",
-            targets: ["HamuLanguageTranslateor"]),
+            name: "HamuLanguageTranslator",
+            targets: ["HamuLanguageTranslator"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "HamuLanguageTranslateor"),
+            name: "HamuLanguageTranslator"),
         .testTarget(
-            name: "HamuLanguageTranslateorTests",
-            dependencies: ["HamuLanguageTranslateor"]),
+            name: "HamuLanguageTranslatorTests",
+            dependencies: ["HamuLanguageTranslator"]),
     ]
 )
