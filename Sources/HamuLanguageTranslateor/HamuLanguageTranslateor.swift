@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 public struct HamuLanguageTranslateor {
-    public func apply(source: String) -> String {
+    public static func translate(from source: String) -> String {
         var result = source
         var containedWords = [HamuWord]()
         for word in HamuWord.allCases {

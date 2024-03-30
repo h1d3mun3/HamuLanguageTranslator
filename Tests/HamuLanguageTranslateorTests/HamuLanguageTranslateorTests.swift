@@ -7,7 +7,7 @@ final class HamuLanguageTranslateorTests: XCTestCase {
         let expected = "はむはー"
 
 
-        let result = HamuLanguageTranslateor().apply(source: sources)
+        let result = HamuLanguageTranslateor.translate(from: sources)
 
 
         XCTAssertEqual(result, expected)
