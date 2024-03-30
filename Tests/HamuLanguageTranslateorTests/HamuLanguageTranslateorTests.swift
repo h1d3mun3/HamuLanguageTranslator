@@ -3,10 +3,13 @@ import XCTest
 
 final class HamuLanguageTranslateorTests: XCTestCase {
     func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
+        let sources = "あいさつ"
+        let expected = "はむはー"
 
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+
+        let result = HamuLanguageTranslateor().apply(source: sources)
+
+
+        XCTAssertEqual(result, expected)
     }
 }
