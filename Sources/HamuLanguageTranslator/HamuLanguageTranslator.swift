@@ -2,17 +2,31 @@
 // https://docs.swift.org/swift-book
 
 public struct HamuLanguageTranslator {
-    public static func translate(from source: String) -> String {
+    public enum Mode {
+        case toHamu, fromHamu
+    }
+
+    public static func translate(from source: String, mode: HamuLanguageTranslator.Mode) -> String {
         var result = source
-        var containedWords = [HamuWord]()
+        var containedWordSets = [(target: String, to: String)]()
         for word in HamuWord.allCases {
-            if source.contains(word.getNaturalWord()) {
-                containedWords.append(word)
+            let wordSet = getWordSet(from: word, with: mode)
+            if source.contains(wordSet.target) {
+                containedWordSets.append(wordSet)
             }
         }
         
-        containedWords.forEach({result.replace($0.getNaturalWord(), with: $0.getHamuWord()) })
+        containedWordSets.forEach({result.replace($0.target, with: $0.to) })
 
         return result
+    }
+}
+
+extension HamuLanguageTranslator {
+    private static func getWordSet(from word: HamuWord, with mode: Mode) -> (target: String, to: String)  {
+        let target = mode == .toHamu ? word.getNaturalWord() : word.getHamuWord()
+        let to = mode == .toHamu ? word.getHamuWord() : word.getNaturalWord()
+
+        return (target: target, to: to)
     }
 }
